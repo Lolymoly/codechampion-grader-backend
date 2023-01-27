@@ -18,9 +18,17 @@ CREATE TABLE "User" (
 -- CreateTable
 CREATE TABLE "Task" (
     "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+    "rating" INTEGER NOT NULL,
+    "timeLimit" INTEGER NOT NULL,
+    "memoryLimit" INTEGER NOT NULL,
+    "pdfLink" TEXT NOT NULL,
 
     CONSTRAINT "Task_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Task_name_key" ON "Task"("name");
